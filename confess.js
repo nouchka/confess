@@ -137,11 +137,10 @@ var confess = {
                 });
                 console.log('');
                 resources.forEach(function (resource) {
-                    console.log(
-                        ths.pad(resource.id, 3) + ': ' +
-                        ths.pad(resource.duration, 6) + 'ms; ' +
-                        ths.pad(resource.size, 7) + 'b; ' +
-                        ths.truncate(resource.url, 84)
+                    console.log(resource.id + ';' +
+                        resource.duration + ';' +
+                        resource.size + ';' +
+                        resource.url + ';'
                     );
                 });
             }
