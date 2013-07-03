@@ -110,19 +110,8 @@ var confess = {
                 console.log('');
                 this.emitConfig(config, '');
             }
-            console.log('');
-            console.log('Elapsed load time: ' + this.pad(elapsed, 6) + 'ms');
-            console.log('   # of resources: ' + this.pad(resources.length-1, 8));
-            console.log('');
-            console.log(' Fastest resource: ' + this.pad(fastest.duration, 6) + 'ms; ' + this.truncate(fastest.url));
-            console.log(' Slowest resource: ' + this.pad(slowest.duration, 6) + 'ms; ' + this.truncate(slowest.url));
-            console.log('  Total resources: ' + this.pad(totalDuration, 6) + 'ms');
-            console.log('');
-            console.log('Smallest resource: ' + this.pad(smallest.size, 7) + 'b; ' + this.truncate(smallest.url));
-            console.log(' Largest resource: ' + this.pad(largest.size, 7) + 'b; ' + this.truncate(largest.url));
-            console.log('  Total resources: ' + this.pad(totalSize, 7) + 'b' + (missingSize ? '; (at least)' : ''));
+
             if (config.verbose) {
-                console.log('');
                 var ths = this,
                     length = 104,
                     ratio = length / elapsed,
@@ -133,9 +122,7 @@ var confess = {
                           ths.repeat('=', (resource.times.end - resource.times.start) * ratio)
                     ;
                     bar = bar.substr(0, length) + ths.repeat(' ', length - bar.length);
-                    console.log(ths.pad(resource.id, 3) + '|' + bar + '|');
                 });
-                console.log('');
                 resources.forEach(function (resource) {
                     console.log(resource.id + ';' +
                         resource.duration + ';' +
