@@ -1,5 +1,6 @@
 # confess.js
 
+Using confess to provide real time monitoring of javascript performances
 A small script library that uses [PhantomJS 1.2](http://www.phantomjs.org/) (or later) to headlessly analyze web pages. Currently it can perform the following tasks:
 
  * Generation of an *appcache* manifest for a web app
